@@ -12,8 +12,11 @@ namespace P2FixAnAppDotNetCode.Models.Repositories
 
         public ProductRepository()
         {
-            _products = new List<Product>();
-            GenerateProductData();
+            if (_products == null || _products.Count == 0)
+            {
+                _products = new List<Product>();
+                GenerateProductData();
+            }
         }
 
         /// <summary>
@@ -31,9 +34,7 @@ namespace P2FixAnAppDotNetCode.Models.Repositories
             _products.Add(new Product(++id, 20, 1000, "Clé USB - 64GB + Porte-clés - Argent ", "64GB + Porte-clés - Argent"));
             _products.Add(new Product(++id, 30, 11500, "Cuisinière à Gaz 4 Feux – ", "RGCN-50- SB– 50x50 cm – 100% Inox"));
             _products.Add(new Product(++id, 40, 35000, "Fontaine à Eau 2 Robinets Chaud/normal", " - Bdt-hn567 - Blanc"));
-
-            }
-
+        }
 
         /// <summary>
         /// Get all products from the inventory
@@ -49,10 +50,13 @@ namespace P2FixAnAppDotNetCode.Models.Repositories
         /// </summary>
         public void UpdateProductStocks(int productId, int quantityToRemove)
         {
-            Product product = _products.First(p => p.Id == productId);
+            var product = _products.FirstOrDefault(p => p.Id == productId);
+            if (product == null)
+                return;
+
             product.Stock = product.Stock - quantityToRemove;
 
-            if (product.Stock == 0)
+            if (product.Stock <= 0)
                 _products.Remove(product);
         }
     }
