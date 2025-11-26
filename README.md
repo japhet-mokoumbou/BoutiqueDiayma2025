@@ -47,3 +47,11 @@ Avant que les produits apparaissent dans le navigateur, l’exécution passe obl
 **Première méthode 100 % métier atteinte** : `ProductController.Index()`  
 **Tous les produits sont affichés** grâce au `return View(products)` + la vue `Index.cshtml`
 
+## 11. lien Google Drive du fichier exécutable (.zip)
+https://drive.google.com/file/d/1DAE_4JLiDSr7RvqDoaEwdLbvR7w669wP/view?usp=drive_link
+
+
+## 12. Optionel :
+- Ajout de la langue wolof : OK
+- 3 commits significatifs : OK
+- Dépôt du lien à mon dépôt github sur Google Classrooms : OK
