@@ -6,7 +6,7 @@
 
 ## 6. Les 2 bugs trouvés :
 - Il n'y pas de mouvements de stock des produits même après la validation d'une commande
-- Lorsque qu'on choisit l'espagnol comme langue, c'est le français qui est appliqué.
+- Lorsqu'on choisit l'espagnol comme langue, c'est le français qui est appliqué.
 
 
 ## 8. t les namespaces, classes et méthodes visités avant l’affichage des produits sur l’écran d’accueil 
